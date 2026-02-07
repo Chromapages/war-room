@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# secrets
+chromadash-26200-firebase-adminsdk-fbsvc-a4c94b0133.json

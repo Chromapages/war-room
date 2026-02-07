@@ -1,0 +1,16 @@
+{
+    "name": "War Room",
+    "short_name": "WarRoom",
+    "description": "AI Executive Commander Dashboard",
+    "start_url": "/dashboard",
+    "display": "standalone",
+    "background_color": "#020617",
+    "theme_color": "#020617",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "64x64",
+            "type": "image/x-icon"
+        }
+    ]
+}

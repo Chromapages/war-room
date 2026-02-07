@@ -1,9 +1,39 @@
 export interface AgentLog {
   id: string;
   timestamp: string;
-  agent: 'Chroma' | 'ClientOps' | 'BizOps' | 'System';
+  agent: string;
   level: 'info' | 'success' | 'warning' | 'error';
   message: string;
+}
+
+export interface FirestoreLog {
+  agent: string;
+  action: string;
+  status: 'success' | 'warning' | 'error' | 'info';
+  time_string: string;
+}
+
+export interface FirestoreStats {
+  vps_health: string;
+  active_agents: number;
+  api_quota: number;
+  revenue_mtd: number;
+  quotas?: {
+    gemini: number;
+    claude: number;
+    openai: number;
+  };
+}
+
+export interface AgentProfile {
+  id: string
+  name: string
+  role: string
+  avatar: string
+  status: 'online' | 'idle' | 'busy'
+  currentTask: string
+  lastActive: string
+  skills: string[]
 }
 
 export interface ActionItem {
@@ -23,6 +53,59 @@ export interface InfraStatus {
     openai: number;
   };
 }
+
+export const MOCK_AGENTS: AgentProfile[] = [
+  {
+    id: "chroma",
+    name: "Chroma",
+    role: "Chief of Staff",
+    avatar: "🟣",
+    status: "online",
+    currentTask: "Synthesizing executive briefing for Commander",
+    lastActive: "2 mins ago",
+    skills: ["Strategic Planning", "System Orchestration", "Cross-Agent Sync"]
+  },
+  {
+    id: "client-ops",
+    name: "Client Ops",
+    role: "Account Manager",
+    avatar: "🔵",
+    status: "online",
+    currentTask: "Onboarding new high-tier client",
+    lastActive: "Just now",
+    skills: ["GHL Integration", "Client Communications", "Automated Reporting"]
+  },
+  {
+    id: "funnel-builder",
+    name: "Funnel Builder",
+    role: "Growth",
+    avatar: "🟠",
+    status: "busy",
+    currentTask: "Optimizing conversion rate on Vercel deployment",
+    lastActive: "15 mins ago",
+    skills: ["Vercel Deployment", "A/B Testing", "Landing Page Design"]
+  },
+  {
+    id: "social-manager",
+    name: "Social Media Manager",
+    role: "Marketing",
+    avatar: "🔴",
+    status: "idle",
+    currentTask: "Waiting for content approval",
+    lastActive: "1 hour ago",
+    skills: ["Content Scheduling", "Engagement Analysis", "Ad Copy Generation"]
+  },
+  {
+    id: "engineering",
+    name: "Engineering Team",
+    role: "Dev",
+    avatar: "🟢",
+    status: "online",
+    currentTask: "Refactoring database connection pool",
+    lastActive: "5 mins ago",
+    skills: ["Backend Architecture", "API Development", "Infrastructure Scaling"]
+  }
+]
 
 export const MOCK_LOGS: AgentLog[] = [
   { id: '1', timestamp: '10:42:01', agent: 'Chroma', level: 'info', message: 'Checked emails - Inbox Zero' },

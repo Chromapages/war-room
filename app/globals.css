@@ -32,7 +32,7 @@
   --ring: 212.7 26.8% 83.9%;
 
   --radius: 0.5rem;
-  
+
   /* Status Colors */
   --status-success: 142 76% 36%;
   --status-warning: 45 93% 47%;
@@ -63,11 +63,11 @@
   --color-status-success: hsl(var(--status-success));
   --color-status-warning: hsl(var(--status-warning));
   --color-status-error: hsl(var(--status-error));
-  
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
